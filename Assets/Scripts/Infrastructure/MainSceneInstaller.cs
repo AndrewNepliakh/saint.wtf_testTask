@@ -8,12 +8,12 @@ namespace Infrastructure
     public class MainSceneInstaller : MonoInstaller
     {
         [SerializeField] private UIManager _uiManager;
-        [SerializeField] private MainManager mainManager;
+        [SerializeField] private MainManager _mainManager;
 
         public override void InstallBindings()
         {
             Container.Bind<IUIManager>().FromInstance(_uiManager).AsSingle().NonLazy();
-            Container.Bind<IMainManager>().FromInstance(mainManager).AsSingle().NonLazy();
+            Container.Bind<IMainManager>().FromInstance(_mainManager).AsSingle().NonLazy();
         }
     }
 }

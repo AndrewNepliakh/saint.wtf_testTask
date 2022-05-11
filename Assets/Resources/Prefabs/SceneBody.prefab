@@ -272,6 +272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899f2fb2ae7241ccab9d887a7197a92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildigsSpawnPositions:
+  - {fileID: 2198932352083819752}
+  - {fileID: 2198932352121891173}
+  - {fileID: 2198932352002233402}
 --- !u!1 &2198932351307538976
 GameObject:
   m_ObjectHideFlags: 0

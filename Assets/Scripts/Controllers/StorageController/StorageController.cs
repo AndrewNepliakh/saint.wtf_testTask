@@ -1,14 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Controllers.StorageController
+namespace Controllers
 {
     public class StorageController : MonoBehaviour, IStorage
     {
-        private Vector3 _startStoragePosition = new Vector3(-2.25f, 0.0f, 2.25f);
-        private float _positionStep = 0.5f;
+        public Material material => _floor.material;
+        
+        [SerializeField] protected MeshRenderer _floor;
+        protected Vector3 _startStoragePosition = new Vector3(-2.25f, 0.0f, 2.25f);
+        protected float _positionStep = 0.5f;
 
         private Stack<IProduct> _storedProducts = new Stack<IProduct>();
+        
+        private int _limit = 200;
 
         public void SetProduct(IProduct product)
         {
@@ -18,8 +23,8 @@ namespace Controllers.StorageController
             var yMultiplier = _storedProducts.Count / 100;
             var yPos = _startStoragePosition.y + (_positionStep * yMultiplier);
             
-            var zMultiplier = _storedProducts.Count / 10;
-            var zPos = _startStoragePosition.z + (_positionStep * zMultiplier);
+            var zMultiplier = (_storedProducts.Count % 100) / 10;
+            var zPos = _startStoragePosition.z - (_positionStep * zMultiplier);
             
             var position = new Vector3(xPos, yPos, zPos);
             
@@ -29,9 +34,12 @@ namespace Controllers.StorageController
 
         public IProduct GetProduct(Vector3 position)
         {
-           var product = _storedProducts.Pop();
-           product.Move(position);
-           return product;
+            if (_storedProducts.Count <= 0) return null;
+            var product = _storedProducts.Pop();
+            product.Move(position);
+            return product;
         }
+
+        public bool IsFull() => _storedProducts.Count >= _limit;
     }
 }

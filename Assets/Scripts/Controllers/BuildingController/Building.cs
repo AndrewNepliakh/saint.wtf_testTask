@@ -8,11 +8,14 @@ namespace Controllers.BuildingController
     {
         public BuildingType Type => _buildingType;
         protected BuildingType _buildingType;
+        protected float _produceTime;
+        protected ProductType _productType;
 
         [SerializeField] protected MeshRenderer _body;
-        [SerializeField] protected MeshRenderer _stock;
-        [SerializeField] protected MeshRenderer _storage;
+        [SerializeField] protected StockController _stock;
+        [SerializeField] protected StorageController _storage;
         public abstract void Init(BuildingType type);
+        public abstract void Produce();
     }
     
     public enum BuildingType

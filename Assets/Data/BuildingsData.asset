@@ -18,13 +18,16 @@ MonoBehaviour:
     BodyColor: {r: 0.9811321, g: 0.9742728, b: 0.5970096, a: 1}
     StockColor: {r: 1, g: 1, b: 1, a: 1}
     StorageColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
+    ProduceTime: 1
   - Type: 1
     SpawnPosition: {x: -10, y: 0, z: 10}
     BodyColor: {r: 0.2783019, g: 1, b: 0.59275603, a: 1}
     StockColor: {r: 1, g: 1, b: 1, a: 1}
     StorageColor: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 1}
+    ProduceTime: 2
   - Type: 2
     SpawnPosition: {x: -10, y: 0, z: -10}
     BodyColor: {r: 0.504717, g: 0.6593001, b: 1, a: 1}
     StockColor: {r: 1, g: 1, b: 1, a: 1}
     StorageColor: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 1}
+    ProduceTime: 3

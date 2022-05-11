@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Controllers.StorageController
+namespace Controllers
 {
     public interface IStorage
     {

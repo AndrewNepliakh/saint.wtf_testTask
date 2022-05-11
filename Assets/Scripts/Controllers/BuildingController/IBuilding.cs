@@ -4,5 +4,6 @@ namespace Controllers.BuildingController
     {
         BuildingType Type { get; }
         void Init(BuildingType type);
+        void Produce();
     }
 }

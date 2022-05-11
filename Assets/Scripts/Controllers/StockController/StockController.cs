@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Controllers.StockController
+namespace Controllers
 {
-    public class StockController : MonoBehaviour
+    public class StockController : StorageController
     {
         
     }

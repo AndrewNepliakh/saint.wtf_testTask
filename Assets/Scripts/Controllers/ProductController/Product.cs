@@ -5,6 +5,7 @@ namespace Controllers
     public abstract class Product : MonoBehaviour, IProduct
     {
         public ProductType Type => _productType;
+        public Transform Transform => transform;
         protected ProductType _productType;
 
         [SerializeField] protected MeshRenderer _body;
@@ -12,7 +13,7 @@ namespace Controllers
         public abstract void Init(ProductType type);
         public void Move(Vector3 position)
         {
-            transform.position = position;
+            transform.localPosition = position;
         }
     }
 

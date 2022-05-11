@@ -20,7 +20,7 @@ namespace Managers.BuildingsManager
         public List<BuildingModel> _buildingModels = new List<BuildingModel>();
 
         public Color GetBodyColor(BuildingType type) => _buildingModels.Find(x => x.Type == type).BodyColor;
-        public Color GetStockColor(BuildingType type) => _buildingModels.Find(x => x.Type == type).BodyColor;
-        public Color GetBodyColor(BuildingType type) => _buildingModels.Find(x => x.Type == type).BodyColor;
+        public Color GetStockColor(BuildingType type) => _buildingModels.Find(x => x.Type == type).StockColor;
+        public Color GetStorageColor(BuildingType type) => _buildingModels.Find(x => x.Type == type).StorageColor;
     }
 }

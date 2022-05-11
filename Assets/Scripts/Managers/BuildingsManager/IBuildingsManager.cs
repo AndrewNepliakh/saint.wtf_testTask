@@ -6,6 +6,6 @@ namespace Managers.BuildingsManager
 {
     public interface IBuildingsManager
     {
-        void ConstructBuildings(List<Transform> spawnPoints);
+        void ConstructBuildings();
     }
 }

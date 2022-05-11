@@ -12,9 +12,9 @@ namespace Controllers.BuildingController
         {
             _buildingType = type;
             transform.position = _buildingsData.GetSpawnPosition(type);
-            _body.GetComponent<MeshRenderer>().material.color = _buildingsData.GetBodyColor(type);
-            _stock.GetComponent<MeshRenderer>().material.color = _buildingsData.GetStockColor(type);
-            _storage.GetComponent<MeshRenderer>().material.color = _buildingsData.GetStorageColor(type);
+            _body.material.color = _buildingsData.GetBodyColor(type);
+            _stock.material.color = _buildingsData.GetStockColor(type);
+            _storage.material.color = _buildingsData.GetStorageColor(type);
         }
     }
 }

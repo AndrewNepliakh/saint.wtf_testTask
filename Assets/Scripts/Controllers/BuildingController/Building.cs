@@ -9,9 +9,9 @@ namespace Controllers.BuildingController
         public BuildingType Type => _buildingType;
         protected BuildingType _buildingType;
 
-        [SerializeField] protected GameObject _body;
-        [SerializeField] protected GameObject _stock;
-        [SerializeField] protected GameObject _storage;
+        [SerializeField] protected MeshRenderer _body;
+        [SerializeField] protected MeshRenderer _stock;
+        [SerializeField] protected MeshRenderer _storage;
         public abstract void Init(BuildingType type);
     }
     

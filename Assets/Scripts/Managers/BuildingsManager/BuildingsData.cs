@@ -19,7 +19,7 @@ namespace Managers.BuildingsManager
     [CreateAssetMenu(fileName = "BuildingsData", menuName = "Data/BuildingsData")]
     public class BuildingsData : ScriptableObject
     {
-         public List<BuildingModel> buildingModels = new List<BuildingModel>();
+        public List<BuildingModel> buildingModels = new List<BuildingModel>();
 
         public Color GetBodyColor(BuildingType type) => buildingModels.Find(x => x.Type == type).BodyColor;
         public Color GetStockColor(BuildingType type) => buildingModels.Find(x => x.Type == type).StockColor;

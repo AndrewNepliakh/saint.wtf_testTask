@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public static class Constants
 {
@@ -15,4 +11,5 @@ public static class Constants
     public const string SCENE_PATH = "Prefabs/SceneBody";
     public const string BUILDING_PATH = "Prefabs/Building";
     public const string PLAYER_PATH = "Prefabs/Player";
+    public const string PRODUCT_PATH = "Prefabs/Product";
 }

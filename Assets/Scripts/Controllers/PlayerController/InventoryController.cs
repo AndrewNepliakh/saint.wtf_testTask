@@ -46,8 +46,9 @@ namespace Controllers.PlayerController
                     for (var i = _products.Count - 1; i >= 0; i--)
                     {
                         if (storage.IsFull()) return;
-                        storage.SetProduct(_products[i].Transform.position, _products[i]);
                         _products[i].Transform.SetParent(storage.transform);
+                        var position = _products[i].Transform.InverseTransformPoint(_products[i].Transform.position);
+                        storage.SetProduct(position, _products[i]);
                         _products.Remove(_products[i]);
                     }
 

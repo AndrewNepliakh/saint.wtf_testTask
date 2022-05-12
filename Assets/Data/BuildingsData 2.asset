@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1358c38df644903a071b13cef0da672, type: 3}
-  m_Name: BuildingsData
+  m_Name: BuildingsData 2
   m_EditorClassIdentifier: 
   buildingModels:
   - Type: 0

@@ -14,7 +14,7 @@ namespace Controllers
         public bool IsEmpty { get; private set; }
         
         [Inject] private BuildingsData _buildingsData;
-        private readonly List<int> _products = new List<int>();
+        private readonly List<List<IProduct>> _products = new List<List<IProduct>>();
         private BuildingType? _buildingType;
         private List<ProductType> _consumableProductsTypes;
 
@@ -29,13 +29,14 @@ namespace Controllers
                 IsEmpty = true;
                 return IsEmpty;
             }
-            
+
+            _products.Clear();
             foreach (var productType in _consumableProductsTypes)
             {
-                var productsType = _storedProducts.Where(x => x.Type == productType).ToList().Count;
+                var productsType = _storedProducts.Where(x => x.Type == productType).ToList();
                 _products.Add(productsType);
             }
-            
+  
             if (_products.Count == 0)
             {
                 IsEmpty = true;
@@ -44,7 +45,7 @@ namespace Controllers
 
             foreach (var products in _products)
             {
-                if (products == 0)
+                if (products.Count == 0)
                 {
                     IsEmpty = true;
                     return true;
@@ -63,9 +64,8 @@ namespace Controllers
 
             foreach (var products in _products)
             {
-                var product = _storedProducts[_storedProducts.Count - 1];
+                var product = products[products.Count - 1];
                 _storedProducts.Remove(product);
-                product.Transform.SetParent(parent);
                 product.Move(product.Transform.position, position);
                 consumedProducts.Add(product);
             }

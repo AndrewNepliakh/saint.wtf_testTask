@@ -23,7 +23,7 @@ namespace Controllers.BuildingController
             _timer = 0.0f;
         }
 
-        protected virtual void Update()
+        private void Update()
         {
             if (_storage.IsFull()) return;
             
@@ -46,7 +46,8 @@ namespace Controllers.BuildingController
         public override void Produce()
         {
             var product = _productManager.Produce(_productType, _storage.transform);
-            _storage.SetProduct(transform.position, product);
+            var startPos = product.Transform.InverseTransformPoint(transform.position);
+            _storage.SetProduct(startPos, product);
         }
     }
 }

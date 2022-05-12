@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ScriptableObjectInstaller
   m_EditorClassIdentifier: 
   _buildingsData: {fileID: 11400000, guid: 327b90065b2fe414b811653ecafdc914, type: 2}
+  _productDatasData: {fileID: 11400000, guid: aa10fe158ffdf42efb52b16d4ddd1c73, type: 2}

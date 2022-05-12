@@ -17,8 +17,6 @@ namespace Controllers.BuildingController
         [SerializeField] protected StorageController _storage;
         [SerializeField] protected Image _timerIndicator;
         protected float _timer;
-
-        protected List<ProductType> _consumables = new List<ProductType>();
         public abstract void Init(BuildingType type);
         public abstract void Produce();
     }

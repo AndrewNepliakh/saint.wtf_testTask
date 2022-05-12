@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 namespace Controllers
@@ -10,10 +13,34 @@ namespace Controllers
 
         [SerializeField] protected MeshRenderer _body;
 
+        private Coroutine _moveRoutine;
+        private float _speed = 4.0f;
+
         public abstract void Init(ProductType type);
-        public void Move(Vector3 position)
+        public void Move(Vector3 startPosition, Vector3 endPosition)
         {
-            transform.localPosition = position;
+            var startPos = transform.InverseTransformPoint(startPosition);
+
+            if (_moveRoutine == null) 
+                _moveRoutine = StartCoroutine(MoveRoutine(startPos, endPosition));
+            else
+            {
+                StopCoroutine(_moveRoutine);
+                _moveRoutine = null;
+                _moveRoutine = StartCoroutine(MoveRoutine(startPos, endPosition));
+            }
+        }
+
+        private IEnumerator MoveRoutine(Vector3 startPosition, Vector3 endPosition)
+        {
+            var t = 0.0f;
+            
+            while (t < 1.0f)
+            {
+                t += Time.deltaTime * _speed;
+                transform.localPosition = Vector3.Lerp(startPosition, endPosition, t);
+                yield return null;
+            }
         }
     }
 

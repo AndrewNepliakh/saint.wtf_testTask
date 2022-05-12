@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Controllers
@@ -10,6 +11,6 @@ namespace Controllers
 
         void Init(ProductType type);
 
-        void Move(Vector3 position);
+        void Move(Vector3 startPosition, Vector3 endPosition);
     }
 }

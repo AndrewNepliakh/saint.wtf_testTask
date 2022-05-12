@@ -6,16 +6,16 @@ namespace Controllers
     public class StorageController : MonoBehaviour, IStorage
     {
         public Material material => _floor.material;
-        
+
         [SerializeField] protected MeshRenderer _floor;
         protected Vector3 _startStoragePosition = new Vector3(-2.25f, 0.0f, 2.25f);
         protected float _positionStep = 0.5f;
 
-        protected Stack<IProduct> _storedProducts = new Stack<IProduct>();
+        protected List<IProduct> _storedProducts = new List<IProduct>();
         
         private int _limit = 200;
 
-        public void SetProduct(IProduct product)
+        public void SetProduct(Vector3 startPosition, IProduct product)
         {
             var xMultiplier = _storedProducts.Count % 10;
             var xPos = _startStoragePosition.x + (_positionStep *xMultiplier);
@@ -28,16 +28,17 @@ namespace Controllers
             
             var position = new Vector3(xPos, yPos, zPos);
             
-            product.Move(position);
-            _storedProducts.Push(product);
+            product.Move(startPosition, position);
+            _storedProducts.Add(product);
         }
-
-        public IProduct GetProduct(Vector3 position)
+        
+        public virtual List<IProduct> GetProduct( Vector3 position)
         {
             if (_storedProducts.Count <= 0) return null;
-            var product = _storedProducts.Pop();
-            product.Move(position);
-            return product;
+            var product = _storedProducts[_storedProducts.Count - 1];
+            _storedProducts.Remove(product);
+            product.Move(product.Transform.position, position);
+            return new List<IProduct>{product};
         }
 
         public bool IsFull() => _storedProducts.Count >= _limit;

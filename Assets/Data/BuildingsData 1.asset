@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1358c38df644903a071b13cef0da672, type: 3}
   m_Name: BuildingsData 1
   m_EditorClassIdentifier: 
-  buildingModels: []
+  buildingModels:
+  - Type: 1
+    Prefab: {fileID: 9180971850189778010, guid: 04199a267697541309725531dbbbbf0a, type: 3}
+    ProductType: 0
+    ConsumeProductTypes: 0100000002000000
+    SpawnPosition: {x: 10, y: 0, z: 10}
+    BodyColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 0}
+    StockColor: {r: 0.90554047, g: 1, b: 0.3443396, a: 0}
+    StorageColor: {r: 0.0014915466, g: 0, b: 1, a: 0}
+    ProduceTime: 1

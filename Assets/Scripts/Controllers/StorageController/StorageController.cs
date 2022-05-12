@@ -6,6 +6,7 @@ namespace Controllers
     public class StorageController : MonoBehaviour, IStorage
     {
         public Material material => _floor.material;
+        public int ProductsCount => _storedProducts.Count;
 
         [SerializeField] protected MeshRenderer _floor;
         protected Vector3 _startStoragePosition = new Vector3(-2.25f, 0.0f, 2.25f);
@@ -32,11 +33,12 @@ namespace Controllers
             _storedProducts.Add(product);
         }
         
-        public virtual List<IProduct> GetProduct( Vector3 position)
+        public virtual List<IProduct> GetProduct(Vector3 position, Transform parent)
         {
             if (_storedProducts.Count <= 0) return null;
             var product = _storedProducts[_storedProducts.Count - 1];
             _storedProducts.Remove(product);
+            product.Transform.SetParent(parent);
             product.Move(product.Transform.position, position);
             return new List<IProduct>{product};
         }

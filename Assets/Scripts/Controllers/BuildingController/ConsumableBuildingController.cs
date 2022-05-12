@@ -29,7 +29,7 @@ namespace Controllers.BuildingController
 
         public bool Consume()
         {
-            return _stock.GetProduct(transform.position)?.Count > 0;
+            return _stock.GetProduct(transform.position, transform)?.Count > 0;
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Controllers
             return IsEmpty;
         }
 
-        public override List<IProduct> GetProduct(Vector3 position)
+        public override List<IProduct> GetProduct(Vector3 position, Transform parent)
         {
             if (CheckForEmpty()) return null; 
             
@@ -65,6 +65,7 @@ namespace Controllers
             {
                 var product = _storedProducts[_storedProducts.Count - 1];
                 _storedProducts.Remove(product);
+                product.Transform.SetParent(parent);
                 product.Move(product.Transform.position, position);
                 consumedProducts.Add(product);
             }

@@ -6,6 +6,6 @@ namespace Controllers
     public interface IStorage
     {
         void SetProduct(Vector3 startPosition, IProduct product);
-        List<IProduct> GetProduct(Vector3 position);
+        List<IProduct> GetProduct(Vector3 position, Transform parent);
     }
 }

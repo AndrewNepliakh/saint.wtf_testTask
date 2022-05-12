@@ -13,12 +13,39 @@ MonoBehaviour:
   m_Name: BuildingsData 1
   m_EditorClassIdentifier: 
   buildingModels:
-  - Type: 1
-    Prefab: {fileID: 9180971850189778010, guid: 04199a267697541309725531dbbbbf0a, type: 3}
+  - Type: 0
+    Prefab: {fileID: 9180971850189778010, guid: 12cb5d666f9064b87b2cf82df040ef9f, type: 3}
     ProductType: 0
-    ConsumeProductTypes: 0100000002000000
+    ConsumeProductTypes: 
     SpawnPosition: {x: 10, y: 0, z: 10}
-    BodyColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 0}
-    StockColor: {r: 0.90554047, g: 1, b: 0.3443396, a: 0}
-    StorageColor: {r: 0.0014915466, g: 0, b: 1, a: 0}
+    BodyColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+    StockColor: {r: 1, g: 1, b: 1, a: 1}
+    StorageColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    ProduceTime: 1
+  - Type: 1
+    Prefab: {fileID: 9180971850189778010, guid: 12cb5d666f9064b87b2cf82df040ef9f, type: 3}
+    ProductType: 1
+    ConsumeProductTypes: 00000000
+    SpawnPosition: {x: -10, y: 0, z: 10}
+    BodyColor: {r: 0.9372549, g: 0.80587244, b: 0.2980392, a: 1}
+    StockColor: {r: 1, g: 1, b: 1, a: 1}
+    StorageColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    ProduceTime: 1
+  - Type: 2
+    Prefab: {fileID: 9180971850189778010, guid: 12cb5d666f9064b87b2cf82df040ef9f, type: 3}
+    ProductType: 2
+    ConsumeProductTypes: 0000000001000000
+    SpawnPosition: {x: -30, y: 0, z: 10}
+    BodyColor: {r: 0.944929, g: 0.4812656, b: 0.990566, a: 1}
+    StockColor: {r: 1, g: 1, b: 1, a: 1}
+    StorageColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    ProduceTime: 1
+  - Type: 3
+    Prefab: {fileID: 9180971850189778010, guid: 12cb5d666f9064b87b2cf82df040ef9f, type: 3}
+    ProductType: 3
+    ConsumeProductTypes: 0100000002000000
+    SpawnPosition: {x: -30, y: 0, z: -10}
+    BodyColor: {r: 0, g: 1, b: 0.895766, a: 1}
+    StockColor: {r: 1, g: 1, b: 1, a: 1}
+    StorageColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
     ProduceTime: 1

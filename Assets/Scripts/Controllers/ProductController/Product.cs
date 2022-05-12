@@ -48,6 +48,7 @@ namespace Controllers
     {
         Free,
         ForOne,
-        ForTwo
+        ForTwo,
+        ForThree
     }
 }

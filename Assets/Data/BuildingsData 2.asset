@@ -31,12 +31,3 @@ MonoBehaviour:
     StockColor: {r: 1, g: 1, b: 1, a: 1}
     StorageColor: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 1}
     ProduceTime: 2
-  - Type: 2
-    Prefab: {fileID: 9180971850189778010, guid: 04199a267697541309725531dbbbbf0a, type: 3}
-    ProductType: 2
-    ConsumeProductTypes: 0000000001000000
-    SpawnPosition: {x: -10, y: 0, z: -10}
-    BodyColor: {r: 0.504717, g: 0.6593001, b: 1, a: 1}
-    StockColor: {r: 1, g: 1, b: 1, a: 1}
-    StorageColor: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 1}
-    ProduceTime: 3

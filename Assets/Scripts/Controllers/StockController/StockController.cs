@@ -11,23 +11,19 @@ namespace Controllers
 {
     public class StockController : StorageController
     {
-        public bool IsEmpty { get; private set; }
-        
         [Inject] private BuildingsData _buildingsData;
         private readonly List<List<IProduct>> _products = new List<List<IProduct>>();
-        private BuildingType? _buildingType;
+        private BuildingType _buildingType;
         private List<ProductType> _consumableProductsTypes;
 
-        private bool CheckForEmpty()
+        public bool IsEmpty()
         {
-            _buildingType ??= transform.parent.GetComponent<Building>().Type;
-            _consumableProductsTypes ??= _buildingsData.GetConsumableProducts(_buildingType.Value).Distinct().ToList();
+            _buildingType = transform.parent.GetComponent<Building>().Type;
+            _consumableProductsTypes = _buildingsData.GetConsumableProducts(_buildingType).Distinct().ToList();
 
             if (_consumableProductsTypes.Count == 0)
             {
-                Debug.LogError("Set Consumables in building data!");
-                IsEmpty = true;
-                return IsEmpty;
+                return false;
             }
 
             _products.Clear();
@@ -39,27 +35,22 @@ namespace Controllers
   
             if (_products.Count == 0)
             {
-                IsEmpty = true;
-                return IsEmpty;
+                return false;
             }
 
             foreach (var products in _products)
             {
                 if (products.Count == 0)
                 {
-                    IsEmpty = true;
                     return true;
                 }
             }
 
-            IsEmpty = false;
-            return IsEmpty;
+            return false;
         }
 
         public override List<IProduct> GetProduct(Vector3 position, Transform parent)
         {
-            if (CheckForEmpty()) return null; 
-            
             var consumedProducts = new List<IProduct>();
 
             foreach (var products in _products)

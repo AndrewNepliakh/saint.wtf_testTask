@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819ec495285674615a791c21a0c4914b, type: 3}
   m_Name: ScriptableObjectInstaller
   m_EditorClassIdentifier: 
-  _buildingsData: {fileID: 11400000, guid: 327b90065b2fe414b811653ecafdc914, type: 2}
+  _buildingsData: {fileID: 11400000, guid: d742b823bb83a461795fa49a71c31f69, type: 2}
   _productDatasData: {fileID: 11400000, guid: aa10fe158ffdf42efb52b16d4ddd1c73, type: 2}

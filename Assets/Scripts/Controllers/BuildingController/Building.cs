@@ -10,14 +10,17 @@ namespace Controllers.BuildingController
     {
         public BuildingType Type => _buildingType;
         protected BuildingType _buildingType;
-        protected float _produceTime;
         protected ProductType _productType;
+        protected List<ProductType> _consumableTypes = new List<ProductType>();
+        protected float _produceTime;
 
         [SerializeField] protected MeshRenderer _body;
         [SerializeField] protected StorageController _storage;
+        [SerializeField] protected StockController _stock;
         [SerializeField] protected Image _timerIndicator;
         protected float _timer;
         public abstract void Init(BuildingType type);
+        public abstract void Consume();
         public abstract void Produce();
     }
     
@@ -25,6 +28,7 @@ namespace Controllers.BuildingController
     {
         Type1,
         Type2,
-        Type3
+        Type3,
+        Type4
     }
 }

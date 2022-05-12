@@ -12,17 +12,16 @@ namespace Managers.BuildingsManager
         private BuildingController _buildingPrefab;
         [Inject] private DiContainer _diContainer;
         [Inject] private BuildingsData _buildingsData;
-        
+
         public void ConstructBuildings()
         {
-            _buildingPrefab = Resources.Load<BuildingController>(Constants.BUILDING_PATH);
-
             foreach (var model in _buildingsData.buildingModels)
             {
-                var building = _diContainer.InstantiatePrefab(_buildingPrefab, Vector3.zero, Quaternion.identity,
+                var building = _diContainer.InstantiatePrefab(
+                    _buildingsData.GetPrefab(model.Type), Vector3.zero,
+                    Quaternion.identity,
                     null).GetComponent<BuildingController>();
                 building.Init(model.Type);
-                
                 _buildings.Add(building);
             }
         }

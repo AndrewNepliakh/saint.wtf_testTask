@@ -11,6 +11,7 @@ namespace Managers.BuildingsManager
     public class BuildingModel
     {
         public BuildingType Type;
+        public GameObject Prefab;
         public ProductType ProductType;
         public Vector3 SpawnPosition;
         public Color BodyColor;
@@ -30,5 +31,6 @@ namespace Managers.BuildingsManager
         public Vector3 GetSpawnPosition(BuildingType type) => buildingModels.Find(x => x.Type == type).SpawnPosition;
         public float GetProduceTime(BuildingType type) => buildingModels.Find(x => x.Type == type).ProduceTime;
         public ProductType GetProductType(BuildingType type) => buildingModels.Find(x => x.Type == type).ProductType;
+        public GameObject GetPrefab(BuildingType type) => buildingModels.Find(x => x.Type == type).Prefab;
     }
 }

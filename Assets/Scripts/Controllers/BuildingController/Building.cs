@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Controllers.BuildingController
 {
@@ -12,8 +14,11 @@ namespace Controllers.BuildingController
         protected ProductType _productType;
 
         [SerializeField] protected MeshRenderer _body;
-        [SerializeField] protected StockController _stock;
         [SerializeField] protected StorageController _storage;
+        [SerializeField] protected Image _timerIndicator;
+        protected float _timer;
+
+        protected List<ProductType> _consumables = new List<ProductType>();
         public abstract void Init(BuildingType type);
         public abstract void Produce();
     }

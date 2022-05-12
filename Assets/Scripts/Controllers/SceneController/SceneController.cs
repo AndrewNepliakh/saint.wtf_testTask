@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Managers.BuildingsManager;
 using UnityEngine;
 using Zenject;

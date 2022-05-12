@@ -11,7 +11,7 @@ namespace Controllers
         protected Vector3 _startStoragePosition = new Vector3(-2.25f, 0.0f, 2.25f);
         protected float _positionStep = 0.5f;
 
-        private Stack<IProduct> _storedProducts = new Stack<IProduct>();
+        protected Stack<IProduct> _storedProducts = new Stack<IProduct>();
         
         private int _limit = 200;
 

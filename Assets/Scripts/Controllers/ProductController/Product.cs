@@ -19,8 +19,6 @@ namespace Controllers
         public abstract void Init(ProductType type);
         public void Move(Vector3 startPosition, Vector3 endPosition)
         {
-            
-
             if (_moveRoutine == null) 
                 _moveRoutine = StartCoroutine(MoveRoutine(startPosition, endPosition));
             else

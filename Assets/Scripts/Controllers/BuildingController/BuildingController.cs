@@ -44,7 +44,7 @@ namespace Controllers.BuildingController
 
         public override void Consume()
         {
-            _stock.GetProduct(transform.position, transform);
+            _stock.GetProduct(Vector3.zero, transform);
             Produce();
         }
 

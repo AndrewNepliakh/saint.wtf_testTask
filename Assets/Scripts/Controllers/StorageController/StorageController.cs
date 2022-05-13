@@ -38,8 +38,9 @@ namespace Controllers
             if (_storedProducts.Count <= 0) return null;
             var product = _storedProducts[_storedProducts.Count - 1];
             _storedProducts.Remove(product);
+            var modPos = parent.InverseTransformPoint(product.Transform.position);
+            product.Move(modPos, position);
             product.Transform.SetParent(parent);
-            product.Move(product.Transform.position, position);
             return new List<IProduct>{product};
         }
 

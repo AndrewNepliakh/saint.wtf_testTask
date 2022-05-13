@@ -43,7 +43,7 @@ MonoBehaviour:
   - Type: 3
     Prefab: {fileID: 9180971850189778010, guid: 12cb5d666f9064b87b2cf82df040ef9f, type: 3}
     ProductType: 3
-    ConsumeProductTypes: 0100000002000000
+    ConsumeProductTypes: 000000000100000002000000
     SpawnPosition: {x: -30, y: 0, z: -10}
     BodyColor: {r: 0, g: 1, b: 0.895766, a: 1}
     StockColor: {r: 1, g: 1, b: 1, a: 1}

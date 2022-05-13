@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6282800426711449333}
   - component: {fileID: 5187254963856629106}
   - component: {fileID: 8296692300051498613}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 80737081855242869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 2023471556807847472}
   - component: {fileID: 3736732331394413237}
   - component: {fileID: 6615840226460108806}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

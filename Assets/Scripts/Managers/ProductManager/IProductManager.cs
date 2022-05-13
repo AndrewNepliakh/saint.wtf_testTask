@@ -6,5 +6,6 @@ namespace Managers.ProductManager
     public interface IProductManager
     {
         IProduct Produce(ProductType type, Transform parent);
+        void Hide(IProduct product);
     }
 }
